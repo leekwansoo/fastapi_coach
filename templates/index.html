@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    
+    <h1>Welcome to Fastapi Video Server</h1>
+        <button id = videolist onclick = "newwindow(id)">List Video</button>
+        <button id = videotrace onclick = "newwindow(id)">Trace Video</button>
+        <button id = videostack onclick = "newwindow(id)">Stack Video</button>
+        <button id = uploadvideo onclick = "newwindow(id)">Upload Video</button>
+</body>
+<script>
+    function newwindow(id) {
+            newwindowurl = 'http://localhost:5000/' + id
+            window.location.href = newwindowurl;
+            }  
+    function popwindow(id) {
+            newwindowurl = 'http://localhost:5000/' + id
+            window.open(newwindowurl);
+            }  
+</script>
+</html>
