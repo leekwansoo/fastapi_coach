@@ -5,9 +5,9 @@ fastapi
 ffmpeg
 gunicorn
 jinja2
+libgl1-mesa-glx
 mediapipe
 opencv-python
-opencv-python-headless
 path
 Pillow
 psutil
