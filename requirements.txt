@@ -6,7 +6,7 @@ opencv-python
 ffmpeg
 gunicorn
 jinja2
-libgl1-mesa-glx
+libgl1
 mediapipe
 path
 Pillow
