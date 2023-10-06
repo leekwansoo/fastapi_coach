@@ -1,5 +1,7 @@
+asyncio
 uvicorn
 fastapi
+gunicorn
 jinja2
 mediapipe
 opencv-python
