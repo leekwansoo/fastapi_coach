@@ -1,8 +1,12 @@
 asyncio
 uvicorn
 fastapi
+ffmpeg
 gunicorn
 jinja2
+libgl1
+libsm6
+libxext6
 mediapipe
 opencv-python
 path
