@@ -2,12 +2,12 @@ asyncio
 bootstrap-py
 uvicorn
 fastapi
+opencv-python
 ffmpeg
 gunicorn
 jinja2
 libgl1-mesa-glx
 mediapipe
-opencv-python
 path
 Pillow
 psutil
