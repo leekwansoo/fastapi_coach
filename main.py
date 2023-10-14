@@ -7,7 +7,7 @@ from fastapi.responses import HTMLResponse, FileResponse, StreamingResponse, Res
 from fastapi.middleware.cors import CORSMiddleware
 from programs.video_play import play_video
 from programs.video_stack import stack_video
-from programs.coach import track_video
+#from programs.coach import track_video
 import os
 from pathlib import Path
 import glob
@@ -155,8 +155,9 @@ async def create_upload_video(file: UploadFile = File(...)):
     with open(file_path, "wb") as buffer:
         buffer.write(file.file.read())
 
-    result = await track_video(file_path)
-    return("traced result stored as path /" + result)
+    # result = await track_video(file_path)
+    result = file_path
+    return("tracing is disabled /" + result)
 
 @app.get("/videoupload")
 def main(request: Request):
