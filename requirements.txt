@@ -52,7 +52,7 @@ locust==2.16.1
 Markdown==3.4.4
 MarkupSafe==2.1.3
 matplotlib==3.8.0
-mediapipe==0.10.5
+#mediapipe==0.10.5
 ml-dtypes==0.2.0
 motor==3.3.1
 mpmath==1.3.0
