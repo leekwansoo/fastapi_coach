@@ -1,11 +1,12 @@
 import cv2
-import mediapipe as mp
+#import mediapipe as mp
 
+"""
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
-
-
+"""
+"""
 async def track_video(file_path):
     
     cap = cv2.VideoCapture(file_path)
@@ -91,3 +92,4 @@ async def track_video(file_path):
     out.release()
 
     return(file_name)
+"""
