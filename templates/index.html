@@ -13,13 +13,11 @@
 </body>
 <script>
     function newwindow(id) {
-            var current_url = window.location
-            newwindowurl = current_url + id
+            newwindowurl = '/' + id
             window.location.href = newwindowurl;
             }  
     function popwindow(id) {
-            var current_url = window.location
-            newwindowurl = current_url + id
+            newwindowurl = '/' + id
             window.open(newwindowurl);
             }  
 </script>

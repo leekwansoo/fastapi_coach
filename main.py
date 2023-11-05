@@ -7,12 +7,9 @@ from fastapi.responses import HTMLResponse, FileResponse, StreamingResponse, Res
 from fastapi.middleware.cors import CORSMiddleware
 from programs.video_play import play_video
 from programs.video_stack import stack_video
-#from programs.coach import track_video
+from programs.coach import track_video
 import os
 from pathlib import Path
-import glob
-import asyncio
-from io import BytesIO
 
 app = FastAPI()
 
@@ -57,8 +54,6 @@ async def create_upload_files(request: Request, file: UploadFile = File(...)):
     #result = await play_video(file_path)
         
     return ("uploaded at /" + file_path)
-    
-    
 
 
 """ 
@@ -154,34 +149,10 @@ async def create_upload_video(file: UploadFile = File(...)):
     file_path = f"static/videos/" + file_name
     with open(file_path, "wb") as buffer:
         buffer.write(file.file.read())
-
-    # result = await track_video(file_path)
+    result = await track_video(file_path)
     result = file_path
-    return("tracing is disabled /" + result)
+    return("tracing result", result)
 
-@app.get("/videoupload")
-def main(request: Request):
-    print("ok")
-    return templates.TemplateResponse("upload.html", {"request": request})
-
-@app.post("/videoupload")
-def upload(request: Request, file: UploadFile = File(...)):
-    try:
-        #location = storeimage(file_path)
-        file_name = file.filename
-        file_type = file_name.split(".")[1]
-        
-        contents = file.file.read()
-        file_path = f'static/images/' + file.filename
-        with open(file_path, "wb") as f:
-            f.write(contents)
-    except Exception:
-        return {"message": "There was an error uploading the file"}
-    finally:
-        file.file.close()
-       
-    print(file_type)
-    return templates.TemplateResponse("display_video.html", {"request": request,  "myImage": file_path})
 
 
 if __name__ == "__main__":

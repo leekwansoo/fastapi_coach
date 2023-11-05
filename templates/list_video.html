@@ -23,8 +23,8 @@
    
     <script>      
         function getfunction(id) {
-            var current_url = window.location    
-            fetch( current_url + id, {
+                 
+            fetch('/video1/' + id, {
                 method: "GET"
                                            
             }).then(function(response) {
@@ -35,13 +35,12 @@
             };
         
         function newwindow(id) {
-            var current_url = window.location
-            newwindowurl = current_url + id
+            newwindowurl = '/' + id
             window.location.href = newwindowurl;
             }  
 
         function popwindow(id) {
-            newwindowurl = 'static/videos/' + id
+            newwindowurl = '/videoplay/' + id
             window.open(newwindowurl);
             }  
                     
